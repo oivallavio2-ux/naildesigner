@@ -239,15 +239,15 @@ function Index() {
                       <p className="text-neutral-600 mb-6 italic flex-grow">"{dep.text}"</p>
                       <p className="font-display text-neutral-900">— {dep.name}</p>
                       
-                      {/* Antes e Depois (Miniatura) */}
-                      <div className="mt-6 flex items-center gap-3 pt-6 border-t border-neutral-100">
-                        <div className="relative w-16 h-16 rounded-md overflow-hidden shadow-sm border border-neutral-100">
+                      {/* Antes e Depois (Ampliado) */}
+                      <div className="mt-6 flex items-center gap-4 pt-6 border-t border-neutral-100">
+                        <div className="relative w-1/2 aspect-square rounded-md overflow-hidden shadow-md border border-neutral-200">
                           <img src={dep.before} alt="Antes" className="w-full h-full object-cover" loading="lazy" />
-                          <div className="absolute bottom-0 inset-x-0 bg-black/60 backdrop-blur-sm text-white text-[9px] uppercase tracking-wider text-center py-0.5">Antes</div>
+                          <div className="absolute bottom-0 inset-x-0 bg-black/70 backdrop-blur-sm text-white text-[10px] font-medium uppercase tracking-wider text-center py-1">Antes</div>
                         </div>
-                        <div className="relative w-16 h-16 rounded-md overflow-hidden shadow-sm border border-neutral-100">
+                        <div className="relative w-1/2 aspect-square rounded-md overflow-hidden shadow-md border border-neutral-200">
                           <img src={dep.after} alt="Depois" className="w-full h-full object-cover" loading="lazy" />
-                          <div className="absolute bottom-0 inset-x-0 bg-[#b8935a]/80 backdrop-blur-sm text-white text-[9px] uppercase tracking-wider text-center py-0.5">Depois</div>
+                          <div className="absolute bottom-0 inset-x-0 bg-[#b8935a]/90 backdrop-blur-sm text-white text-[10px] font-medium uppercase tracking-wider text-center py-1">Depois</div>
                         </div>
                       </div>
                     </div>
