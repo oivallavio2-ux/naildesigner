@@ -239,16 +239,33 @@ function Index() {
                       <p className="text-neutral-600 mb-6 italic flex-grow">"{dep.text}"</p>
                       <p className="font-display text-neutral-900">— {dep.name}</p>
                       
-                      {/* Antes e Depois (Ampliado) */}
+                      {/* Antes e Depois (Ampliado com Lightbox) */}
                       <div className="mt-6 flex items-center gap-4 pt-6 border-t border-neutral-100">
-                        <div className="relative w-1/2 aspect-square rounded-md overflow-hidden shadow-md border border-neutral-200">
-                          <img src={dep.before} alt="Antes" className="w-full h-full object-cover" loading="lazy" />
-                          <div className="absolute bottom-0 inset-x-0 bg-black/70 backdrop-blur-sm text-white text-[10px] font-medium uppercase tracking-wider text-center py-1">Antes</div>
-                        </div>
-                        <div className="relative w-1/2 aspect-square rounded-md overflow-hidden shadow-md border border-neutral-200">
-                          <img src={dep.after} alt="Depois" className="w-full h-full object-cover" loading="lazy" />
-                          <div className="absolute bottom-0 inset-x-0 bg-[#b8935a]/90 backdrop-blur-sm text-white text-[10px] font-medium uppercase tracking-wider text-center py-1">Depois</div>
-                        </div>
+                        
+                        <Dialog>
+                          <DialogTrigger asChild>
+                            <div className="relative w-1/2 aspect-square rounded-md overflow-hidden shadow-md border border-neutral-200 cursor-zoom-in hover:opacity-90 transition-opacity">
+                              <img src={dep.before} alt="Antes" className="w-full h-full object-cover" loading="lazy" />
+                              <div className="absolute bottom-0 inset-x-0 bg-black/70 backdrop-blur-sm text-white text-[10px] font-medium uppercase tracking-wider text-center py-1 pointer-events-none">Antes</div>
+                            </div>
+                          </DialogTrigger>
+                          <DialogContent className="max-w-[95vw] md:max-w-3xl p-0 bg-transparent border-none">
+                            <img src={dep.before} alt="Antes Expandido" className="w-full h-auto rounded-lg object-contain max-h-[85vh] shadow-2xl" />
+                          </DialogContent>
+                        </Dialog>
+
+                        <Dialog>
+                          <DialogTrigger asChild>
+                            <div className="relative w-1/2 aspect-square rounded-md overflow-hidden shadow-md border border-neutral-200 cursor-zoom-in hover:opacity-90 transition-opacity">
+                              <img src={dep.after} alt="Depois" className="w-full h-full object-cover" loading="lazy" />
+                              <div className="absolute bottom-0 inset-x-0 bg-[#b8935a]/90 backdrop-blur-sm text-white text-[10px] font-medium uppercase tracking-wider text-center py-1 pointer-events-none">Depois</div>
+                            </div>
+                          </DialogTrigger>
+                          <DialogContent className="max-w-[95vw] md:max-w-3xl p-0 bg-transparent border-none">
+                            <img src={dep.after} alt="Depois Expandido" className="w-full h-auto rounded-lg object-contain max-h-[85vh] shadow-2xl" />
+                          </DialogContent>
+                        </Dialog>
+
                       </div>
                     </div>
                   </CarouselItem>
